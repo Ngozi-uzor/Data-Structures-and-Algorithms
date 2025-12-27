@@ -1,0 +1,52 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOusLQq20XZ1M1wV/XoTMza"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "9NgwCnSs1FqY"
+      },
+      "outputs": [],
+      "source": [
+        "\"\"\"\n",
+        "DAY 1: TWO SUM\n",
+        "Problem: Given an array of integers and an integer target,\n",
+        "return indices of the two numbers such that they add up to target.\n",
+        "\n",
+        "Time Complexity: O(n)\n",
+        "Space Complexity: O(n)\n",
+        "\"\"\"\n",
+        "def two_sum(nums, target):\n",
+        "    num_map = {}\n",
+        "    for i, num in enumerate(nums):\n",
+        "        complement = target - num\n",
+        "        if complement in num_map:\n",
+        "            return [num_map[complement], i]\n",
+        "        num_map[num] = i\n",
+        "    return []\n",
+        "\n",
+        "# Test cases\n",
+        "if __name__ == \"__main__\":\n",
+        "    print(\"Day 1 - Two Sum\")\n",
+        "    print(\"Test 1:\", two_sum([2, 7, 11, 15], 9))  # [0, 1]\n",
+        "    print(\"Test 2:\", two_sum([3, 2, 4], 6))       # [1, 2]\n",
+        "    print(\"Test 3:\", two_sum([3, 3], 6))          # [0, 1]"
+      ]
+    }
+  ]
+}
